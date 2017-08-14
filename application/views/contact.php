@@ -23,8 +23,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
     <!-- Custom Fonts -->
     <link href="<?php echo base_url(); ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -49,7 +48,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                     <a href="<?php echo site_url('index') ?>"> <img src="<?php echo base_url(); ?>images/Logo.png" width="50px" height="52px"> </a>
+                     <a href="<?php echo site_url('welcome') ?>"> <img src="<?php echo base_url(); ?>images/Logo.png" width="50px" height="52px"> </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -133,16 +132,16 @@ Village, Brgy. San Bartolome,<br>Novaliches, Quezon City
                     <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
                 <ul class="list-unstyled list-inline list-social-icons">
                     <li>
-                        <a href="http://www.facebook.com"><i class="fa fa-facebook-square fa-2x"></i></a>
+                        <a href="<?php echo site_url('http://www.facebook.com') ?>"><i class="fa fa-facebook-square fa-2x"></i></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
                     </li>
                     <li>
-                        <a href="http://www.twitter.com"><i class="fa fa-twitter-square fa-2x"></i></a>
+                        <a href="<?php echo site_url('http://www.twitter.com') ?>"><i class="fa fa-twitter-square fa-2x"></i></a>
                     </li>
                     <li>
-                        <a href="http://www.gmail.com"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                        <a href="<?php echo site_url('http://www.gmail.com') ?>"><i class="fa fa-google-plus-square fa-2x"></i></a>
                     </li>
                 </ul>
             </div>
@@ -203,7 +202,6 @@ Village, Brgy. San Bartolome,<br>Novaliches, Quezon City
     </div>
     <!-- /.container -->
 
-    <!-- jQuery -->
     <script src="<?php echo base_url(); ?>js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->

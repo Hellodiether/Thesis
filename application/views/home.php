@@ -47,12 +47,12 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                         <a href="<?php echo site_url('index') ?>"> <img src="<?php echo base_url(); ?>images/Logo.png" width="50px" height="52px"> </a>
+                         <a href="<?php echo site_url('welcome') ?>"> <img src="<?php echo base_url(); ?>images/Logo.png" width="50px" height="52px"> </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right">
-                    <li>
+                     <li>
                         <a href="<?php echo site_url('welcome/home') ?>">Home</a>
                     </li>
                     <li>
@@ -179,32 +179,32 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="404.html">
-                    <img class="img-responsive img-portfolio img-hover" src="images/conveyor-rollers.jpg" alt="Conveyor Rollers">
+                    <img class="img-responsive img-portfolio img-hover" src="<?php echo base_url(); ?>images/conveyor-rollers.jpg" alt="Conveyor Rollers">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="404.html">
-                    <img class="img-responsive img-portfolio img-hover" src="images/conveyorroller-frame.jpg" alt="Conveyor Frame">
+                    <img class="img-responsive img-portfolio img-hover" src="<?php echo base_url(); ?>images/conveyorroller-frame.jpg" alt="Conveyor Frame">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="404.html">
-                    <img class="img-responsive img-portfolio img-hover" src="images/conveyors-pulleys.jpg" alt="Pulley">
+                    <img class="img-responsive img-portfolio img-hover" src="<?php echo base_url(); ?>images/conveyors-pulleys.jpg" alt="Pulley">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="404.html">
-                    <img class="img-responsive img-portfolio img-hover" src="images/selfalign-frames.jpg" alt="Self Aligning Frames">
+                    <img class="img-responsive img-portfolio img-hover" src="<?php echo base_url(); ?>images/selfalign-frames.jpg" alt="Self Aligning Frames">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="404.html">
-                    <img class="img-responsive img-portfolio img-hover" src="images/beam-mould.jpg" alt="Beam Mould">
+                    <img class="img-responsive img-portfolio img-hover" src="<?php echo base_url(); ?>images/beam-mould.jpg" alt="Beam Mould">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="404.html">
-                    <img class="img-responsive img-portfolio img-hover" src="images/cylinder-mould.jpg" alt="Cylinder Mould">
+                    <img class="img-responsive img-portfolio img-hover" src="<?php echo base_url(); ?>images/cylinder-mould.jpg" alt="Cylinder Mould">
                 </a>
             </div>
         </div>
@@ -229,7 +229,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
             </div>
             <div class="col-md-6">
-                <img class="img-responsive" src="images/Logo.png" width="450px" height="450ppx" alt="">
+                <img class="img-responsive" src="<?php echo base_url(); ?>images/Logo.png" width="450px" height="450ppx" alt="">
             </div>
         </div>
         <!-- /.row -->

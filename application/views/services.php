@@ -1,7 +1,6 @@
 <?php
 defined ('BASEPATH') OR exit ('No direct script access allowed');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +14,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 
     <title>Modern Business - Start Bootstrap Template</title>
 
-    <!-- Bootstrap Core CSS -->
+   <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -46,12 +45,12 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                       <a href="<?php echo site_url('index') ?>"> <img src="<?php echo base_url(); ?>images/Logo.png" width="50px" height="52px"> </a>
+                       <a href="<?php echo site_url('welcome') ?>"> <img src="<?php echo base_url(); ?>images/Logo.png" width="50px" height="52px"> </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right">
-                   <li>
+                    <li>
                         <a href="<?php echo site_url('welcome/home') ?>">Home</a>
                     </li>
                     <li>
@@ -248,7 +247,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
     <script src="<?php echo base_url(); ?>js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo base_url(); ?>s/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 
 </body>
 
