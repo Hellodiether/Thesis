@@ -29,6 +29,13 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+	#inquiry
+	{
+		cursor:pointer;
+	}
+	</style>
 
 </head>
 
@@ -52,7 +59,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right">
                    <li>
-                        <a href="<?php echo site_url('welcome/home') ?>">Home</a>
+                        <a href="<?php echo site_url('welcome/index') ?>">Home</a>
                     </li>
                     <li>
                         <a href="<?php echo site_url('welcome/about') ?>">About</a>
@@ -74,8 +81,8 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
                             </li>
                             </ul>
                         <li>
-                            <a href="<?php echo site_url('welcome/inquiry') ?>">Inquire</a>                   
-                        </li>
+                             <p class="navbar-text" id= "inquiry" href="#myModal" data-toggle="modal" data-target="#myModalHorizontal">Inquiry</p>
+                        </li> 
                         
                                 </ul>
             </div>
@@ -83,6 +90,44 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
         </div>
         <!-- /.container -->
     </nav>
+
+    <!-- /.modal -->
+<div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Modal title
+                </h4>
+            </div>
+                <!--/.modal Body -->
+                        <div class="modal-body">
+                
+                <form class="form-horizontal" role="form">
+                  
+                </form>   
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                            Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Save changes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">
@@ -272,6 +317,14 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
         interval: 5000 //changes the speed
     })
     </script>
+	
+	<script>
+	$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+		});
+	});
+	</script>
 
 </body>
 
