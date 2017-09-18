@@ -43,5 +43,8 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('pages/calendar');
 	}
-
+	public function simple()
+	{
+		$this->load->view('pages/tables/simple');
+	}
 }

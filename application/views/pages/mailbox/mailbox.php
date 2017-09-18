@@ -215,6 +215,11 @@
         <li>
             <a href="<?php echo site_url('welcome/index') ?>"><i class="fa fa-dashboard"></i>Dashboard</a>
         </li>
+
+           <!--Tables button-->
+        <li>
+            <a href="<?php echo site_url('welcome/simple'); ?>"><i class="fa fa-circle-o"></i>Tables</a>
+        </li>
         <li>
           <a href="<?php echo site_url('welcome/calendar'); ?>">
             <i class="fa fa-calendar"></i> <span>Calendar</span>
