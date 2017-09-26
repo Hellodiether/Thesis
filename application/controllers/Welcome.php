@@ -45,6 +45,8 @@ class Welcome extends CI_Controller {
 	}
 	public function simple()
 	{
-		$this->load->view('pages/tables/simple');
+		$this->load->model('tables_model');
+		$data['inquiry'] = $this->tables_model->getInquiry('inquires');
+		$this->load->view('pages/tables/simple', $data);
 	}
-}
+	}	
