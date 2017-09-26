@@ -50,4 +50,13 @@ class Welcome extends CI_Controller {
 		$this->load->view('inquiry');
 
 	}
+	public function connect()
+	{
+		$this->load->model('Main_model'); //load mo dito yung model mo pre
+		$data = $this->input->post();
+
+		$result = $this->Main_model->insert($data);
+		redirect(Welcome/index);
+		
+	}
 }

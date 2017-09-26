@@ -1,7 +1,6 @@
 <?php
 defined ('BASEPATH') OR exit ('No direct script access allowed');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +29,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style>
 	#inquiry
 	{
@@ -199,7 +198,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
     </nav>
 
 <div class="modal fade" id="myBtn">
-	<div class="modal-dialog">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
         <h1>Inquire</h1>
@@ -212,28 +211,29 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
         </div>
         <!-- /.row -->
         <div class="form-style-5">
-<form>
+
+<form method="post" action="/Thesis-aj/index.php/Welcome/connect">
 <fieldset>
 <legend><span class="number">1</span> Customers Information</legend>
         <div class="row">
             <div class="col-md-6">
-            <input type="text" name="field1" placeholder="First Name" style="width:100%; margin-bottom: -30px;"> 
+            <input type="text" name="first_name" placeholder="First Name" style="width:100%; margin-bottom: -30px;"> 
             </div>
             <div class="col-md-6">
-            <input type="text" name="field1" placeholder="Last Name" style="width:100%; margin-bottom: -30px;">
+            <input type="text" name="last_name" placeholder="Last Name" style="width:100%; margin-bottom: -30px;">
             </div>
         </div>
         <div class="row">
    <div class="col-md-12">
-       <input type="email" name="field2" placeholder="Your Email *" style="width:100%; margin-bottom: -30px;">
+       <input type="email" name="email" placeholder="Your Email *" style="width:100%; margin-bottom: -30px;">
    </div>
    <div class="col-md-12">
-       <textarea name="field3" placeholder="Company" style="width:100%; height: 50px; margin-bottom: -20px;"></textarea>
+       <textarea name="company" placeholder="Company" style="width:100%; height: 50px; margin-bottom: -20px;"></textarea>
    </div>
  </div>
 
-<label for="job" >Services:</label>
-<select id="job" name="field4"  style="width:100%; height: 50px;">
+<label for="job">Services:</label>
+<select id="job" name="services" style="width:100%; height: 50px;">
 <optgroup label="Indoors">
   <option value="fishkeeping">Bakal</option>
   <option value="reading">bote</option>
@@ -255,9 +255,9 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 </fieldset>
 <fieldset>
 <legend><span class="number">2</span> Additional Info</legend>
-<textarea name="field3" placeholder="About Your School"  style="width:100%; height: 50px;"></textarea>
+<textarea name="add_info" placeholder="About Your School"  style="width:100%; height: 50px;"></textarea>
 </fieldset>
-<input type="submit" value="Apply" />
+<input type="submit" name= "submit" value="Add" />
 </form>
 </div>
         <div class="modal-footer">
