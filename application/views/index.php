@@ -1,4 +1,4 @@
-<?php
+    <?php
 defined ('BASEPATH') OR exit ('No direct script access allowed');
 ?>
 <!DOCTYPE html>
@@ -227,7 +227,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
  </div>
 
 <label for="job">Services:</label>
-<select id="job" name="services" style="width:100%; height: 50px;">
+<select multiple="multiple" id="job" name="services" style="width:100%; height: 50px;">
 <optgroup label="Indoors">
   <option value="fishkeeping">Bakal</option>
   <option value="reading">bote</option>

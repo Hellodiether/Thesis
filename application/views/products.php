@@ -30,7 +30,10 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!--Css for Inquiry modal -->
 <style type="text/css">
+
         .form-style-5{
             max-width: 100%px;
             padding: 50px 50px;
@@ -139,9 +142,258 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 }
 
 </style>
+<style>
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+  align-items: center;
+  align-content: center;
+  
+}
+
+.cursor {
+  cursor: pointer
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+</style>
+ 
 </head>
 
 <body>
+    <div id="imgModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 10</div>
+      <img src="<?php echo base_url(); ?>images/beam-mould.jpg" >
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 10</div>
+      <img src="<?php echo base_url(); ?>images/slump-cone.jpg" >
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 10</div>
+      <img src="<?php echo base_url(); ?>images/cylinder-mould.jpg" >
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 10</div>
+      <img src="<?php echo base_url(); ?>images/beam-mould.jpg" >
+    </div>
+
+     <div class="mySlides">
+      <div class="numbertext">5 / 10</div>
+      <img src="<?php echo base_url(); ?>images/slump-cone.jpg" >
+    </div>
+
+     <div class="mySlides">
+      <div class="numbertext">6 / 10</div>
+      <img src="<?php echo base_url(); ?>images/conveyors-pulleys2.jpg">
+    </div>
+
+     <div class="mySlides">
+      <div class="numbertext">7 / 10</div>
+      <img src="<?php echo base_url(); ?>images/selfalign-frames.jpg" >
+    </div>
+
+     <div class="mySlides">
+      <div class="numbertext">8 / 10</div>
+      <img src="<?php echo base_url(); ?>images/conveyorroller-frame.jpg" >
+    </div>
+
+     <div class="mySlides">
+      <div class="numbertext">9 / 10</div>
+      <img src="<?php echo base_url(); ?>images/anchor-bolts.jpg">
+    </div>
+
+     <div class="mySlides">
+      <div class="numbertext">10 / 10</div>
+      <img src="<?php echo base_url(); ?>images/stud-bolts.jpg">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+                </div>
+                </div>
+    </div>
+ </div>
+     
+     <script>
+function openModal() {
+  document.getElementById('imgModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('imgModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caphhtion");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -284,7 +536,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
         <div class="row">
             <div class="col-md-4 img-portfolio">
              
-                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/conveyor-rollers.jpg" alt="Conveyor Rollers">
+                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/conveyor-rollers.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor" alt="Conveyor Rollers">
                 </a>
                 <h3>
                     <p>Conveyor Rollers</p>
@@ -293,7 +545,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
             </div>
             <div class="col-md-4 img-portfolio">
              
-                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/conveyors-pulleys.jpg" alt="Pulley">
+                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/conveyors-pulleys.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow cursor" alt="Pulley">
                 </a>
                 <h3>
                     <p>Conveyor Pulley</p>
@@ -302,7 +554,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
             </div>
             <div class="col-md-4 img-portfolio">
 
-                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/cylinder-mould.jpg" alt="Cylinder Mould">
+                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/cylinder-mould.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow cursor" alt="Cylinder Mould">
                 </a>
                 <h3>
                     <p>Cylinder Mould</p>
@@ -316,7 +568,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
         <div class="row">
             <div class="col-md-4 img-portfolio">
                 
-                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/beam-mould.jpg" alt="">
+                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/beam-mould.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow cursor" alt="">
                 </a>
                 <h3>
                     <p>Beam Mould</p>
@@ -325,7 +577,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
             </div>
             <div class="col-md-4 img-portfolio">
                 <a href="#">
-                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/slump-cone.jpg" alt="">
+                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/slump-cone.jpg" onclick="openModal();currentSlide(5)" class="hover-shadow cursor" alt="">
                 </a>
                 <h3>
                     <p>Slump Cone</p>
@@ -334,7 +586,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
             </div>
             <div class="col-md-4 img-portfolio">
              
-                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/conveyors-pulleys2.jpg" alt="">
+                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/conveyors-pulleys2.jpg" onclick="openModal();currentSlide(6)" class="hover-shadow cursor" alt="">
                 </a>
                 <h3>
                     <p>Belt Conveyor Pulley</p>
@@ -347,7 +599,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
         <div class="row">
             <div class="col-md-4 img-portfolio">
               
-                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/selfalign-frames.jpg" alt="">
+                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/selfalign-frames.jpg" onclick="openModal();currentSlide(7)" class="hover-shadow cursor" alt="">
                 </a>
                 <h3>
                     <p>Self Aligning Frames</p>
@@ -356,7 +608,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
             </div>
             <div class="col-md-4 img-portfolio">
                 <a href="">
-                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/conveyorroller-frame.jpg" alt="">
+                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/conveyorroller-frame.jpg" onclick="openModal();currentSlide(8)" class="hover-shadow cursor" alt="">
                 </a>
                 <h3>
                     <a href="">Conveyor Roller Frame</a>
@@ -365,10 +617,10 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
             </div>
             <div class="col-md-4 img-portfolio">
                 <a href="">
-                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/anchor-bolts.jpg" alt="">
+                    <img class="img-responsive img-hover" src="<?php echo base_url(); ?>images/anchor-bolts.jpg" onclick="openModal();currentSlide(9)" class="hover-shadow cursor" alt="">
                 </a>
                 <h3>
-                    <a href="">Anchor Bolt</a>
+                   <p>Anchor Bolt</p>
                 </h3>
                 <p></p>
             </div>
@@ -376,16 +628,118 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
         <div class="row">
         <div class="col-md-4 img-portfolio">
                 <a href="">
-                    <img class="img-responsive img-hover"  src="<?php echo base_url(); ?>images/stud-bolts.jpg" alt="Mountains">
+                    <img class="img-responsive img-hover"  src="<?php echo base_url(); ?>images/stud-bolts.jpg" onclick="openModal();currentSlide(10)" class="hover-shadow cursor" alt="Mountains">
              </a>
               <h3>
-                    <a href="">Stud Bolts</a>
+                    <p>Stud Bolts</p>
                 </h3>
                 <p></p>
              </div>
+
+             <div id="imgModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 10</div>
+      <img src="<?php echo base_url(); ?>images/beam-mould.jpg" style="width:100%">
     </div>
- 
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 10</div>
+      <img src="<?php echo base_url(); ?>images/slump-cone.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 10</div>
+      <img src="<?php echo base_url(); ?>images/cylinder-mould.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 10</div>
+      <img src="<?php echo base_url(); ?>images/beam-mould.jpg" style="width:100%">
+    </div>
+
+     <div class="mySlides">
+      <div class="numbertext">5 / 10</div>
+      <img src="<?php echo base_url(); ?>images/slump-cone.jpg" style="width:100%">
+    </div>
+
+     <div class="mySlides">
+      <div class="numbertext">6 / 10</div>
+      <img src="<?php echo base_url(); ?>images/conveyors-pulleys2.jpg" style="width:100%">
+    </div>
+
+     <div class="mySlides">
+      <div class="numbertext">7 / 10</div>
+      <img src="<?php echo base_url(); ?>images/selfalign-frames.jpg" style="width:100%">
+    </div>
+
+     <div class="mySlides">
+      <div class="numbertext">8 / 10</div>
+      <img src="<?php echo base_url(); ?>images/conveyorroller-frame.jpg" style="width:100%">
+    </div>
+
+     <div class="mySlides">
+      <div class="numbertext">9 / 10</div>
+      <img src="<?php echo base_url(); ?>images/anchor-bolts.jpg" style="width:100%">
+    </div>
+
+     <div class="mySlides">
+      <div class="numbertext">10 / 10</div>
+      <img src="<?php echo base_url(); ?>images/stud-bolts.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+                </div>
+                </div>
+    </div>
+ </div>
      
+     <script>
+function openModal() {
+  document.getElementById('imgModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('imgModal').style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caphhtion");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
         <!-- /.row -->
 
         <hr>

@@ -223,6 +223,10 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
    <div class="col-md-12">
        <input type="email" name="email" placeholder="Your Email *" style="width:100%; margin-bottom: -30px;">
    </div>
+<div class="row">
+   <div class="col-md-12">
+       <input type="tel" name="phone_number" placeholder="Enter your phone number *" style="width:100%; margin-bottom: -30px;">
+   </div>
    <div class="col-md-12">
        <textarea name="company" placeholder="Company" style="width:100%; height: 50px; margin-bottom: -20px;"></textarea>
    </div>
@@ -231,21 +235,21 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 <label for="job">Services:</label>
 <select id="job" name="services" style="width:100%; height: 50px;">
 <optgroup label="Indoors">
-  <option value="fishkeeping">Bakal</option>
-  <option value="reading">bote</option>
-  <option value="boxing">plastic</option>
-  <option value="debate">yero</option>
-  <option value="gaming">sirang applaiances</option>
-  <option value="snooker">sirang relo</option>
-  <option value="other_indoor">Other</option>
+  <option>Bakal</option>
+  <option>bote</option>
+  <option>plastic</option>
+  <option>yero</option>
+  <option>sirang applaiances</option>
+  <option>sirang relo</option>
+  <option>Other</option>
 </optgroup>
 <optgroup label="Outdoors">
-  <option value="football">battery</option>
-  <option value="swimming">oil</option>
-  <option value="fishing">titangel</option>
-  <option value="climbing">resistor</option>
-  <option value="cycling">mothermo</option>
-  <option value="other_outdoor">Other</option>
+  <option>battery</option>
+  <option>oil</option>
+  <option>titangel</option>
+  <option>resistor</option>
+  <option>mothermo</option>
+  <option>Other</option>
 </optgroup>
 </select>      
 </fieldset>
@@ -310,7 +314,7 @@ Village, Brgy. San Bartolome,<br>Novaliches, Quezon City
                     <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
                 <ul class="list-unstyled list-inline list-social-icons">
                     <li>
-                        <a href="<?php echo site_url('http://www.facebook.com') ?>"><i class="fa fa-facebook-square fa-2x"></i></a>
+                        <a href="<?php echo site_url('https://www.facebook.com/TDYEntInc/') ?>"><i class="fa fa-facebook-square fa-2x"></i></a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
@@ -331,30 +335,30 @@ Village, Brgy. San Bartolome,<br>Novaliches, Quezon City
         <div class="row">
             <div class="col-md-8">
                 <h3>Send us a Message</h3>
-                <form name="sentMessage" id="contactForm" novalidate>
+                <form method="post" action="/Thesis-aj/index.php/Welcome/feedback">
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Full Name:</label>
-                            <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                            <input type="text" class="form-control" name="fullname" id="name" required data-validation-required-message="Please enter your name.">
                             <p class="help-block"></p>
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Phone Number:</label>
-                            <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                            <input type="tel" class="form-control" name="number" id="phone" required data-validation-required-message="Please enter your phone number.">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Email Address:</label>
-                            <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                            <input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Please enter your email address.">
                         </div>
                     </div>
                     <div class="control-group form-group">
                         <div class="controls">
                             <label>Message:</label>
-                            <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                            <textarea rows="10" cols="100" class="form-control" name="message" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
                         </div>
                     </div>
                     <div id="success"></div>
@@ -364,6 +368,49 @@ Village, Brgy. San Bartolome,<br>Novaliches, Quezon City
             </div>
 
         </div>
+
+        <section class="content">
+      <!-- /.row -->
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Order Table</h3>
+
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              
+              <table class="table table-hover">
+                <tr>
+                  <th>Full Name</th>
+                  <th>Message</th>
+                 
+                </tr>
+                <?php foreach($inquiry as $val) { ?>
+                  <tr>
+                    <td><?php echo $val->fullname; ?></td>
+                    <td><?php echo $val->message; ?></td>
+                   
+                  </tr>
+                <?php } ?>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+    </section>
         <!-- /.row -->
 
         <hr>

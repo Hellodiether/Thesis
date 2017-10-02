@@ -38,10 +38,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('services');
 
 	}
-	public function contact(){
-		$this->load->view('contact');
-
-	}
+	
 	public function project(){
 		$this->load->view('project');
 
@@ -55,8 +52,15 @@ class Welcome extends CI_Controller {
 		$this->load->model('Main_model'); //load mo dito yung model mo pre
 		$data = $this->input->post();
 
-		$result = $this->Main_model->insert($data);
+		$result = $this->Main_model->insert('inquires', $data);
 		redirect(Welcome/index);
 		
+	}
+
+	public function contact()
+	{
+		$this->load->model('Main_model');
+		$data['inquiry'] = $this->Main_model->getInquiry('feedback');
+		$this->load->view('contact', $data);
 	}
 }

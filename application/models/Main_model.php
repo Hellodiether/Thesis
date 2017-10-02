@@ -6,10 +6,14 @@ class Main_model extends CI_Model {
 public function __construct() {
 				parent::__construct();
 			}
-public function insert($data) {
+public function insert($table, $data) {
 
-	$result = $this->db->insert('inquires', $data);
-	return $result;
+	$query = $this->db->insert($table, $data);
+	return $query;
 }
+public function getInquiry($table) {
 
+	$query = $this->db->get($table);
+	return $query;
+}
 }
