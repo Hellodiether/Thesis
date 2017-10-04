@@ -6,22 +6,31 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 
 <head>
 
+     <!-- Select2 -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>dist/select2/dist/css/select2.min.css">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Modern Business - Start Bootstrap Template</title>
+    <title>TDY Enterprises Inc.</title>
 
-   <!-- Bootstrap Core CSS -->
+    
+
+    <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 
+
     <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>css/modern-business.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?><?php echo base_url(); ?>css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="<?php echo base_url(); ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="<?php echo base_url(); ?>plugins/iCheck/all.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>dist/css/skins/_all-skins.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -159,7 +168,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="<?php echo site_url('welcome/home') ?>">Home</a>
+                        <a href="<?php echo site_url('welcome') ?>">Home</a>
                     </li>
                     <li>
                         <a href="<?php echo site_url('welcome/about') ?>">About</a>
@@ -203,7 +212,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
         <div class="row">
         </div>
         <!-- /.row -->
-        <div class="form-style-5">
+         <div class="form-style-5">
 
 <form method="post" action="/Thesis-aj/index.php/Welcome/connect">
 <fieldset>
@@ -225,32 +234,25 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
    </div>
  </div>
 
-<label for="job">Services:</label>
-<select id="job" name="services" style="width:100%; height: 50px;">
-<optgroup label="Indoors">
-  <option value="fishkeeping">Bakal</option>
-  <option value="reading">bote</option>
-  <option value="boxing">plastic</option>
-  <option value="debate">yero</option>
-  <option value="gaming">sirang applaiances</option>
-  <option value="snooker">sirang relo</option>
-  <option value="other_indoor">Other</option>
-</optgroup>
-<optgroup label="Outdoors">
-  <option value="football">battery</option>
-  <option value="swimming">oil</option>
-  <option value="fishing">titangel</option>
-  <option value="climbing">resistor</option>
-  <option value="cycling">mothermo</option>
-  <option value="other_outdoor">Other</option>
-</optgroup>
-</select>      
+<label for="job">Products:</label>
+<div class="form-group">
+                <select class="form-control select2" name="services" multiple="multiple" data-placeholder="Select a State"
+                        style="width: 100%;">
+                  <option>Alabama</option>
+                  <option>Alaska</option>
+                  <option>California</option>
+                  <option>Delaware</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Washington</option>
+                </select>
+              </div>
 </fieldset>
 <fieldset>
 <legend><span class="number">2</span> Additional Info</legend>
 <textarea name="add_info" placeholder="About Your School"  style="width:100%; height: 50px;"></textarea>
 </fieldset>
-<input type="submit" name= "submit" value="Add" />
+<input type="submit" value="Add" />
 </form>
 </div>
         <div class="modal-footer">
@@ -263,7 +265,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 </div>
     <!-- Page Content -->
     <div class="container">
-
+</br></br>
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
@@ -271,7 +273,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
                     
                 </h1>
                 <ol class="breadcrumb">
-                     <li><a href="<a href="<?php echo site_url('welcome/home') ?>">Home</a>
+                     <li><a href="<a href="<?php echo site_url('welcome') ?>">Home</a>
                     <li class="active">Services</li>
                 </ol>
             </div>
@@ -422,11 +424,22 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="<?php echo base_url(); ?>js/jquery.js"></script>
+   <script src="<?php echo base_url(); ?>js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
 
+    <!-- Contact Form JavaScript -->
+    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+    <script src="<?php echo base_url(); ?>plugins/iCheck/icheck.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jqBootstrapValidation.js"></script>
+    <script src="<?php echo base_url(); ?>js/contact_me.js"></script>
+    <script src="<?php echo base_url(); ?>dist/select2/dist/js/select2.full.min.js"></script>
+    <script src="<?php echo base_url(); ?>plugins/iCheck/icheck.min.js"></script>
+
+<script>
+    $('.select2').select2()
+</script>
 </body>
 
 </html>

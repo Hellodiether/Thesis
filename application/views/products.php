@@ -7,6 +7,9 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 
 <head>
 
+      <!-- Select2 -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>dist/select2/dist/css/select2.min.css">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,15 +18,20 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 
     <title>TDY Enterprises Inc.</title>
 
+    
+
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
 
+
     <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>css/modern-business.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?><?php echo base_url(); ?>css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="<?php echo base_url(); ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <link rel="stylesheet" href="<?php echo base_url(); ?>plugins/iCheck/all.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>dist/css/skins/_all-skins.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -142,151 +150,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 }
 
 </style>
-<style>
-body {
-  font-family: Verdana, sans-serif;
-  margin: 0;
-}
 
-* {
-  box-sizing: border-box;
-}
-
-.row > .column {
-  padding: 0 8px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.column {
-  float: left;
-  width: 25%;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: black;
-}
-
-/* Modal Content */
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-  max-width: 1200px;
-}
-
-/* The Close Button */
-.close {
-  color: white;
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.mySlides {
-  display: none;
-  align-items: center;
-  align-content: center;
-  
-}
-
-.cursor {
-  cursor: pointer
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-img {
-  margin-bottom: -4px;
-}
-
-.caption-container {
-  text-align: center;
-  background-color: black;
-  padding: 2px 16px;
-  color: white;
-}
-
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-
-img.hover-shadow {
-  transition: 0.3s
-}
-
-.hover-shadow:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
-</style>
- 
 </head>
 
 <body>
@@ -455,7 +319,7 @@ function showSlides(n) {
         <div class="row">
         </div>
         <!-- /.row -->
-        <div class="form-style-5">
+     <div class="form-style-5">
 
 <form method="post" action="/Thesis-aj/index.php/Welcome/connect">
 <fieldset>
@@ -477,32 +341,25 @@ function showSlides(n) {
    </div>
  </div>
 
-<label for="job">Services:</label>
-<select id="job" name="services" style="width:100%; height: 50px;">
-<optgroup label="Indoors">
-  <option value="fishkeeping">Bakal</option>
-  <option value="reading">bote</option>
-  <option value="boxing">plastic</option>
-  <option value="debate">yero</option>
-  <option value="gaming">sirang applaiances</option>
-  <option value="snooker">sirang relo</option>
-  <option value="other_indoor">Other</option>
-</optgroup>
-<optgroup label="Outdoors">
-  <option value="football">battery</option>
-  <option value="swimming">oil</option>
-  <option value="fishing">titangel</option>
-  <option value="climbing">resistor</option>
-  <option value="cycling">mothermo</option>
-  <option value="other_outdoor">Other</option>
-</optgroup>
-</select>      
+<label for="job">Products:</label>
+<div class="form-group">
+                <select class="form-control select2" name="services" multiple="multiple" data-placeholder="Select a State"
+                        style="width: 100%;">
+                  <option>Alabama</option>
+                  <option>Alaska</option>
+                  <option>California</option>
+                  <option>Delaware</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Washington</option>
+                </select>
+              </div>   
 </fieldset>
 <fieldset>
 <legend><span class="number">2</span> Additional Info</legend>
 <textarea name="add_info" placeholder="About Your School"  style="width:100%; height: 50px;"></textarea>
 </fieldset>
-<input type="submit" name= "submit" value="Add" />
+<input type="submit" value="Add" />
 </form>
 </div>
         <div class="modal-footer">
@@ -516,7 +373,7 @@ function showSlides(n) {
 
     <!-- Page Content -->
     <div class="container">
-
+</br></br>
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
@@ -524,7 +381,7 @@ function showSlides(n) {
                     <small></small>
                 </h1>
                 <ol class="breadcrumb">
-                     <li><a href="<a href="<?php echo site_url('welcome/home') ?>">Home</a>
+                     <li><a href="<a href="<?php echo site_url('welcome') ?>">Home</a>
                     </li>
                     <li class="active">Products</li>
                 </ol>
@@ -768,6 +625,18 @@ function showSlides(n) {
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+    <script src="<?php echo base_url(); ?>plugins/iCheck/icheck.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jqBootstrapValidation.js"></script>
+    <script src="<?php echo base_url(); ?>js/contact_me.js"></script>
+    <script src="<?php echo base_url(); ?>dist/select2/dist/js/select2.full.min.js"></script>
+    <script src="<?php echo base_url(); ?>plugins/iCheck/icheck.min.js"></script>
+
+<script>
+    $('.select2').select2()
+</script>
 
 </body>
 

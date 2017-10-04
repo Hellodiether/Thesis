@@ -13,7 +13,7 @@ public function insert($table, $data) {
 }
 public function getInquiry($table) {
 
-	$query = $this->db->get($table);
+	$query = $this->db->get($table)->result();;
 	return $query;
 }
 }

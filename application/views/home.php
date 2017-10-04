@@ -23,20 +23,16 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
     <!-- Custom Fonts -->
     <link href="<?php echo base_url(); ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+          <!-- Select2 -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>dist/select2/dist/css/select2.min.css">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<script src="<?php echo base_url(); ?>https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<style>
-	#inquiry
-	{
-		cursor:pointer;
-	}
-	</style>
-    <style type="text/css">
+<style type="text/css">
         .form-style-5{
             max-width: 100%px;
             padding: 50px 50px;
@@ -161,13 +157,13 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                         <a href="<?php echo site_url('welcome') ?>"> <img src="<?php echo base_url(); ?>images/Logo.png" width="50px" height="52px"> </a>
+                        <a href="<?php echo site_url('welcome') ?>"> <img src="<?php echo base_url(); ?>images/Logo.png" width="50px" height="52px"> </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right">
-                     <li>
-                        <a href="<?php echo site_url('welcome/home') ?>">Home</a>
+                   <li>
+                        <a href="<?php echo site_url('welcome') ?>">Home</a>
                     </li>
                     <li>
                         <a href="<?php echo site_url('welcome/about') ?>">About</a>
@@ -188,86 +184,16 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
                                 <a href="<?php echo site_url('welcome/project') ?>">Projects</a>
                             </li>
                             </ul>
-                        <li>
+                         <li>
                              <p class="navbar-text" id= "inquiry" href="#myModal" data-toggle="modal" data-target="#myBtn">Inquiry</p>
-                        </li> 
-					
+                        </li>   
+                        
+                                </ul>
+            </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-
-<div class="modal fade" id="myBtn">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-        <h1>Inquire</h1>
-        </div>
-        <div class="modal-body">
-
-
-        <!-- Page Heading/Breadcrumbs -->
-        <div class="row">
-        </div>
-        <!-- /.row -->
-        <div class="form-style-5">
-
-<form method="post" action="/Thesis-aj/index.php/Welcome/connect">
-<fieldset>
-<legend><span class="number">1</span> Customers Information</legend>
-        <div class="row">
-            <div class="col-md-6">
-            <input type="text" name="first_name" placeholder="First Name" style="width:100%; margin-bottom: -30px;"> 
-            </div>
-            <div class="col-md-6">
-            <input type="text" name="last_name" placeholder="Last Name" style="width:100%; margin-bottom: -30px;">
-            </div>
-        </div>
-        <div class="row">
-   <div class="col-md-12">
-       <input type="email" name="email" placeholder="Your Email *" style="width:100%; margin-bottom: -30px;">
-   </div>
-   <div class="col-md-12">
-       <textarea name="company" placeholder="Company" style="width:100%; height: 50px; margin-bottom: -20px;"></textarea>
-   </div>
- </div>
-
-<label for="job">Services:</label>
-<select id="job" name="services" style="width:100%; height: 50px;">
-<optgroup label="Indoors">
-  <option value="fishkeeping">Bakal</option>
-  <option value="reading">bote</option>
-  <option value="boxing">plastic</option>
-  <option value="debate">yero</option>
-  <option value="gaming">sirang applaiances</option>
-  <option value="snooker">sirang relo</option>
-  <option value="other_indoor">Other</option>
-</optgroup>
-<optgroup label="Outdoors">
-  <option value="football">battery</option>
-  <option value="swimming">oil</option>
-  <option value="fishing">titangel</option>
-  <option value="climbing">resistor</option>
-  <option value="cycling">mothermo</option>
-  <option value="other_outdoor">Other</option>
-</optgroup>
-</select>      
-</fieldset>
-<fieldset>
-<legend><span class="number">2</span> Additional Info</legend>
-<textarea name="add_info" placeholder="About Your School"  style="width:100%; height: 50px;"></textarea>
-</fieldset>
-<input type="submit" name= "submit" value="Add" />
-</form>
-</div>
-        <div class="modal-footer">
-
-        </div>
-      </div>
-    </div>
-</div>
-
-</div>
 
     <!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">
@@ -308,7 +234,70 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
             <span class="icon-next"></span>
         </a>
     </header>
+<div class="modal fade" id="myBtn">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        <h1>Inquiry</h1>
+        </div>
+        <div class="modal-body">
 
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+        </div>
+        <!-- /.row -->
+         <div class="form-style-5">
+
+<form method="post" action="/Thesis-aj/index.php/Welcome/connect">
+<fieldset>
+<legend><span class="number">1</span> Customers Information</legend>
+        <div class="row">
+            <div class="col-md-6">
+            <input type="text" name="first_name" placeholder="First Name" style="width:100%; margin-bottom: -30px;"> 
+            </div>
+            <div class="col-md-6">
+            <input type="text" name="last_name" placeholder="Last Name" style="width:100%; margin-bottom: -30px;">
+            </div>
+        </div>
+        <div class="row">
+   <div class="col-md-12">
+       <input type="email" name="email" placeholder="Your Email *" style="width:100%; margin-bottom: -30px;">
+   </div>
+   <div class="col-md-12">
+       <textarea name="company" placeholder="Company" style="width:100%; height: 50px; margin-bottom: -20px;"></textarea>
+   </div>
+ </div>
+
+<label for="job">Products:</label>
+<div class="form-group">
+                <select class="form-control select2" name="services" multiple="multiple" data-placeholder="Select a State"
+                        style="width: 100%;">
+                  <option>Alabama</option>
+                  <option>Alaska</option>
+                  <option>California</option>
+                  <option>Delaware</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Washington</option>
+                </select>
+              </div>   
+</fieldset>
+<fieldset>
+<legend><span class="number">2</span> Additional Info</legend>
+<textarea name="add_info" placeholder="About Your School"  style="width:100%; height: 50px;"></textarea>
+</fieldset>
+<input type="submit" value="Add" />
+</form>
+</div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+    </div>
+</div>
+
+</div>
     <!-- Page Content -->
     <div class="container">
 
@@ -396,27 +385,23 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
         <!-- Features Section -->
         <div class="row">
             <div class="col-lg-12">
-          <h2 class="page-header">Modern Business Features</h2>
+                <h2 class="page-header">Modern Business Features</h2>
             </div>
             <div class="col-md-6">
-                <p>Contacts</p>
+                <p>The Modern Business template by Start Bootstrap includes:</p>
                 <ul>
-                    <li><strong>TDY Enterprises Inc.</strong>
+                    <li><strong>Bootstrap v3.3.7</strong>
                     </li>
-                    <p><i class="fa fa-phone"></i> 
-                    <abbr title="Phone">P</abbr>: (02) 418-45-27</p>
-                <p><i class="fa fa-phone"></i>
-                    <abbr title="Phone">P</abbr>: (02) 417-71-79 </p>
-                     <p>
-                    Lot 424A-2- A West Los Angeles street corner<br>Riverside street, California
-Village, Brgy. San Bartolome,<br>Novaliches, Quezon City
-
-                </p>
+                    <li>jQuery v1.11.1</li>
+                    <li>Font Awesome v4.2.0</li>
+                    <li>Working PHP contact form with validation</li>
+                    <li>Unstyled page elements for easy customization</li>
+                    <li>17 HTML pages</li>
                 </ul>
-               
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
             </div>
             <div class="col-md-6">
-                <img class="img-responsive" src="<?php echo base_url(); ?>images/Logo.png" width="450px" height="450px" alt="">
+                <img class="img-responsive" src="<?php echo base_url(); ?>images/Logo.png" width="450px" height="450ppx" alt="">
             </div>
         </div>
         <!-- /.row -->
@@ -427,7 +412,7 @@ Village, Brgy. San Bartolome,<br>Novaliches, Quezon City
         <div class="well">
             <div class="row">
                 <div class="col-md-8">
-                    <p>Download our copany Profile Here:
+                    <p>To D
                     </p>
                 </div>
                 <div class="col-md-4">
@@ -435,6 +420,7 @@ Village, Brgy. San Bartolome,<br>Novaliches, Quezon City
                 </div>
             </div>
         </div>
+
         <hr>
 
         <!-- Footer -->
@@ -449,11 +435,14 @@ Village, Brgy. San Bartolome,<br>Novaliches, Quezon City
     </div>
     <!-- /.container -->
 
-    <!-- jQuery -->
     <script src="<?php echo base_url(); ?>js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+       <script src="<?php echo base_url(); ?>dist/select2/dist/js/select2.full.min.js"></script>
+<script>
+    $('.select2').select2()
+</script>
 
     <!-- Script to Activate the Carousel -->
     <script>
@@ -461,22 +450,6 @@ Village, Brgy. San Bartolome,<br>Novaliches, Quezon City
         interval: 5000 //changes the speed
     })
     </script>
-	
-	
-	<script>
-	$(document).ready(function(){
-    $("#myBtn").click(function(){
-        $("#myModal").modal();
-		});
-    
-
-
-
-
-
-
-	});
-	</script>
 
 </body>
 

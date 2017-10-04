@@ -6,6 +6,9 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 
 <head>
 
+    <!-- Select2 -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>dist/select2/dist/css/select2.min.css">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,8 +17,11 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 
     <title>TDY Enterprises Inc.</title>
 
+    
+
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
+
 
     <!-- Custom CSS -->
     <link href="<?php echo base_url(); ?><?php echo base_url(); ?>css/modern-business.css" rel="stylesheet">
@@ -23,8 +29,8 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
     <!-- Custom Fonts -->
     <link href="<?php echo base_url(); ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-
-
+    <link rel="stylesheet" href="<?php echo base_url(); ?>plugins/iCheck/all.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>dist/css/skins/_all-skins.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -223,41 +229,30 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
    <div class="col-md-12">
        <input type="email" name="email" placeholder="Your Email *" style="width:100%; margin-bottom: -30px;">
    </div>
-<div class="row">
-   <div class="col-md-12">
-       <input type="tel" name="phone_number" placeholder="Enter your phone number *" style="width:100%; margin-bottom: -30px;">
-   </div>
    <div class="col-md-12">
        <textarea name="company" placeholder="Company" style="width:100%; height: 50px; margin-bottom: -20px;"></textarea>
    </div>
  </div>
 
-<label for="job">Services:</label>
-<select id="job" name="services" style="width:100%; height: 50px;">
-<optgroup label="Indoors">
-  <option>Bakal</option>
-  <option>bote</option>
-  <option>plastic</option>
-  <option>yero</option>
-  <option>sirang applaiances</option>
-  <option>sirang relo</option>
-  <option>Other</option>
-</optgroup>
-<optgroup label="Outdoors">
-  <option>battery</option>
-  <option>oil</option>
-  <option>titangel</option>
-  <option>resistor</option>
-  <option>mothermo</option>
-  <option>Other</option>
-</optgroup>
-</select>      
+<label for="job">Products:</label>
+<div class="form-group">
+                <select class="form-control select2" name="services" multiple="multiple" data-placeholder="Select a State"
+                        style="width: 100%;">
+                  <option>Alabama</option>
+                  <option>Alaska</option>
+                  <option>California</option>
+                  <option>Delaware</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Washington</option>
+                </select>
+              </div>
 </fieldset>
 <fieldset>
 <legend><span class="number">2</span> Additional Info</legend>
 <textarea name="add_info" placeholder="About Your School"  style="width:100%; height: 50px;"></textarea>
 </fieldset>
-<input type="submit" name= "submit" value="Add" />
+<input type="submit" value="Add" />
 </form>
 </div>
         <div class="modal-footer">
@@ -270,6 +265,10 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
 </div>
     <!-- Page Content -->
     <div class="container">
+<div class="row">
+</div>
+</br>
+</br>
 
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
@@ -278,7 +277,7 @@ defined ('BASEPATH') OR exit ('No direct script access allowed');
                     <small></small>
                 </h1>
                 <ol class="breadcrumb">
-                     <li><a href="<?php echo site_url('welcome/home') ?>">Home</a>
+                     <li><a href="<?php echo site_url('welcome') ?>">Home</a>
                     </li>
                     <li class="active">Contact</li>
                 </ol>
@@ -392,8 +391,8 @@ Village, Brgy. San Bartolome,<br>Novaliches, Quezon City
               
               <table class="table table-hover">
                 <tr>
-                  <th>Full Name</th>
-                  <th>Message</th>
+                  <th width="50px">Full Name</th>
+                  <th width="75px">Message</th>
                  
                 </tr>
                 <?php foreach($inquiry as $val) { ?>
@@ -434,8 +433,15 @@ Village, Brgy. San Bartolome,<br>Novaliches, Quezon City
 
     <!-- Contact Form JavaScript -->
     <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+    <script src="<?php echo base_url(); ?>plugins/iCheck/icheck.min.js"></script>
     <script src="<?php echo base_url(); ?>js/jqBootstrapValidation.js"></script>
     <script src="<?php echo base_url(); ?>js/contact_me.js"></script>
+    <script src="<?php echo base_url(); ?>dist/select2/dist/js/select2.full.min.js"></script>
+    <script src="<?php echo base_url(); ?>plugins/iCheck/icheck.min.js"></script>
+
+<script>
+    $('.select2').select2()
+</script>
 
 </body>
 
